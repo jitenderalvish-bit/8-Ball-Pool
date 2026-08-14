@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/panel_bg"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvInstruction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:text="Step 1: Adjust the table boundary corners, then continue." />
+
+        <Button
+            android:id="@+id/btnRedetect"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DETECT"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚙"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.billiards.analyzer.TableView
+            android:id="@+id/tableView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/panel_bg"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/btnModeTable" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TABLE" android:textSize="10sp" />
+            <Button android:id="@+id/btnModePockets" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="POCKETS" android:textSize="10sp" />
+            <Button android:id="@+id/btnModeBalls" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="BALLS" android:textSize="10sp" />
+            <Button android:id="@+id/btnModeCue" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="CUE" android:textSize="10sp" />
+            <Button android:id="@+id/btnModeTarget" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TARGET" android:textSize="10sp" />
+            <Button android:id="@+id/btnModePocketSelect" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="POCKET" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button android:id="@+id/btnPowerLow" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="LOW" android:textSize="10sp" />
+            <Button android:id="@+id/btnPowerMed" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="MEDIUM" android:textSize="10sp" />
+            <Button android:id="@+id/btnPowerHigh" style="?android:attr/buttonStyleSmall" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="HIGH" android:textSize="10sp" />
+
+            <ToggleButton
+                android:id="@+id/toggleBank"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textOn="BANK:ON"
+                android:textOff="BANK:OFF"
+                android:textSize="9sp"
+                android:checked="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvPowerValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:paddingStart="6dp"
+                android:paddingEnd="4dp"
+                android:text="Power: 65" />
+
+            <SeekBar
+                android:id="@+id/seekPower"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="65" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="CALCULATE"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnRemoveBall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:text="REMOVE BALL" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RESET" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
